@@ -30,7 +30,7 @@ db.employees = require('./employee.model.js')(sequelize, Sequelize);
 db.components = require('./component.model.js')(sequelize, Sequelize);
 db.jobs = require('./job.model.js')(sequelize, Sequelize);
 db.usage = require('./usage.model.js')(sequelize, Sequelize);
-
+db.users = require('./user.model.js')(sequelize, Sequelize);
 
 // Mallien väliset riippuvuudet
 db.components.hasOne(db.usage, { onUpdate: 'CASCADE', onDelete: 'RESTRICT' });

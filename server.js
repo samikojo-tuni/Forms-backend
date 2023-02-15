@@ -1,8 +1,15 @@
+// Web-palvelimen sovelluskehys
+// https://expressjs.com/
 const express = require("express");
+
+// Cross-Origin Resource Sharing
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 const cors = require("cors");
 
+// Varsinainen palvelinsovellus
 const app = express();
 
+// Tuotantokäytössä lisää tähän käyttöliittymäsovelluksen osoite
 let corsOptions = {
 	origin: "http://127.0.0.1:5173"
 };
@@ -39,6 +46,7 @@ require('./app/routes/employee.routes')(app);
 require('./app/routes/component.routes')(app);
 require('./app/routes/job.routes')(app);
 require('./app/routes/usage.routes')(app);
+require('./app/routes/user.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
